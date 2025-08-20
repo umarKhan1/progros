@@ -5,6 +5,7 @@ import 'package:progros/core/apptheme.dart';
 
 import 'package:progros/core/constant/app_stringconst.dart';
 import 'package:progros/features/presentation/splash_view.dart';
+import 'package:progros/logic/onboarding.dart/on_boarding_cubit.dart';
 import 'package:progros/logic/splash_screen_cubit.dart';
 
 void main() {
@@ -23,7 +24,10 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(create: (_) => SplashCubit()),
+          BlocProvider(create: (_) => SplashCubit()..start()),
+          BlocProvider(
+            create: (context) => OnboardingCubit(totalPages: 3),
+          ),
         ],
         child: MaterialApp(
           title: ApplicationStrings.appName,

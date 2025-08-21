@@ -8,7 +8,8 @@ import 'package:progros/core/extension/sizedbox_ext.dart';
 import 'package:progros/logic/auth_validation/signup_validation/sign_up_vaildation_state.dart';
 import 'package:progros/logic/auth_validation/signup_validation/signup_validation_cubit.dart';
 import 'package:progros/presentation/auth/login/login_view.dart';
-import 'package:progros/presentation/widget/already_haveac.dart';
+import 'package:progros/presentation/auth/widget/already_haveac.dart';
+import 'package:progros/presentation/dashboard/dashboard.dart';
 import 'package:progros/widget/app_button.dart';
 import 'package:progros/widget/text_fields.dart';
 
@@ -112,7 +113,10 @@ class _SignupScreenState extends State<SignupScreen> {
                               final s = signupValidationCubit.state;
                               if (s.emailError == null &&
                                   s.passwordError == null &&
-                                  s.phoneError == null) {}
+                                  s.phoneError == null) {
+                                      context.pushReplacement(const Dashboard());
+                             
+                                  }
 
                               // Handle login button press
                             },

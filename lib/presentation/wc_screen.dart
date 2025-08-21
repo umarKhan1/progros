@@ -5,7 +5,7 @@ import 'package:progros/core/constant/app_stringconst.dart';
 import 'package:progros/core/extension/app_routes_ext.dart';
 import 'package:progros/core/extension/sizedbox_ext.dart';
 import 'package:progros/presentation/auth/login/login_view.dart';
-import 'package:progros/presentation/widget/already_haveac.dart';
+import 'package:progros/presentation/auth/widget/already_haveac.dart';
 import 'package:progros/widget/app_button.dart';
 import 'package:progros/widget/socialbutton.dart';
 

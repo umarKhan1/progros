@@ -10,11 +10,11 @@
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.bin</key>
 		<data>
-		t/t2JDOoH79fPrVd0+W2AEVbKAs=
+		SfLmvSmqec4Z2yAHBc4kPJZ8N0o=
 		</data>
 		<key>Resources/flutter_assets/AssetManifest.json</key>
 		<data>
-		WxL3HaeEUjHg5NSwXhirYBxr26Y=
+		pj3BCngqet7ygwwRBKE+15YVU/M=
 		</data>
 		<key>Resources/flutter_assets/FontManifest.json</key>
 		<data>
@@ -40,6 +40,10 @@
 		<data>
 		fsiyPblTh0u8KAK0m79Xybh6HRw=
 		</data>
+		<key>Resources/flutter_assets/assets/images/bag.png</key>
+		<data>
+		Mtd8koO8CcIiQGoQmgXz/YSXVjE=
+		</data>
 		<key>Resources/flutter_assets/assets/images/email.png</key>
 		<data>
 		m498+FLxVdOyp9UyzZA0gn5IZfc=
@@ -47,6 +51,10 @@
 		<key>Resources/flutter_assets/assets/images/google.png</key>
 		<data>
 		Ytw+ABGEuqTpBegqwaU1BWsFUm4=
+		</data>
+		<key>Resources/flutter_assets/assets/images/location.png</key>
+		<data>
+		BjwrhlAn6kOAqDq4Ws8AzjNjcSE=
 		</data>
 		<key>Resources/flutter_assets/assets/images/lock.png</key>
 		<data>
@@ -94,7 +102,7 @@
 		</data>
 		<key>Resources/flutter_assets/kernel_blob.bin</key>
 		<data>
-		4525dn1ZZvq6vM1f0e/cRbjv2mw=
+		IsEQ1AssW6kp4/zdFC2K6hbHBtU=
 		</data>
 		<key>Resources/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -122,14 +130,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hvgcgp5wlZWp47/dRWIiDni3jha3ZjH2PXxiWkvDHhk=
+			RDOsk0EewV/XR4NkoZMrw8FPz4lwL+xtqGZEP/JbMbQ=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H/X4PPHoLY25QAK2Jz7Xk5zLi8MQw2/l+5DceW/BNRQ=
+			Mr4G3o57P/rvUB+tE6l1pFAh30JM09blYkCHjios6rg=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/FontManifest.json</key>
@@ -174,6 +182,13 @@
 			S7ci/frcbKQXqZ0ric5nQ3ldGlmoZ2KWKwPcrw6nCi8=
 			</data>
 		</dict>
+		<key>Resources/flutter_assets/assets/images/bag.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			YFIKCc1MPFgLmtsSL8oNpnEB55T0YvM1q1XgAYsv22Y=
+			</data>
+		</dict>
 		<key>Resources/flutter_assets/assets/images/email.png</key>
 		<dict>
 			<key>hash2</key>
@@ -186,6 +201,13 @@
 			<key>hash2</key>
 			<data>
 			n7mlwuwvanBc+9Ybb3aUVnmki3v1VfxVxIazdbyNse0=
+			</data>
+		</dict>
+		<key>Resources/flutter_assets/assets/images/location.png</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			eJG3CIREKWlV80SCN2c1l0c237jtXrFsYlEB0467rHQ=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/assets/images/lock.png</key>
@@ -269,7 +291,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XE7D/fKqOf3XQ/obEZfsF6lulj4eXQhKTWBK5byJiTk=
+			y4jR8nploY9q2ZSZWDe+3UVAjI+i2uddYsRKF33IsJU=
 			</data>
 		</dict>
 		<key>Resources/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

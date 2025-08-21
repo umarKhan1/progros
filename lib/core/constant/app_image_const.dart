@@ -13,6 +13,8 @@ static const String loginimage = '${assets}loginimg.png';
 static const String email = '${assets}email.png';
 static const String password = '${assets}lock.png';
 static const String phone = '${assets}tele.png';
+static const String location = '${assets}location.png';
+static const String cart = '${assets}bag.png';
 
 
 }

@@ -1,0 +1,20 @@
+---
+triple:          'x86_64-apple-darwin'
+binary-path:     '/Users/muhammadomar/Documents/progros/build/macos/Build/Products/Profile/progros.app/Contents/MacOS/progros'
+relocations:
+  - { offset: 0xCFC49, size: 0x8, addend: 0x0, symName: '_$s7progros17MainFlutterWindowC12awakeFromNibyyFTo', symObjAddr: 0x0, symBinAddr: 0x1000012B0, symSize: 0xF0 }
+  - { offset: 0xCFD57, size: 0x8, addend: 0x0, symName: '_$s7progros17MainFlutterWindowCMa', symObjAddr: 0x1A0, symBinAddr: 0x100001450, symSize: 0x14 }
+  - { offset: 0xCFDF4, size: 0x8, addend: 0x0, symName: '_$s7progros17MainFlutterWindowC12awakeFromNibyyFTo', symObjAddr: 0x0, symBinAddr: 0x1000012B0, symSize: 0xF0 }
+  - { offset: 0xCFEFB, size: 0x8, addend: 0x0, symName: '_$s7progros17MainFlutterWindowC11contentRect9styleMask7backing5deferACSo6CGRectV_So013NSWindowStyleH0VSo18NSBackingStoreTypeVSbtcfcTo', symObjAddr: 0xF0, symBinAddr: 0x1000013A0, symSize: 0x80 }
+  - { offset: 0xCFF55, size: 0x8, addend: 0x0, symName: '_$s7progros17MainFlutterWindowCfD', symObjAddr: 0x170, symBinAddr: 0x100001420, symSize: 0x30 }
+  - { offset: 0xD0059, size: 0x8, addend: 0x0, symName: '_$s7progros11AppDelegateC47applicationShouldTerminateAfterLastWindowClosedySbSo13NSApplicationCFTo', symObjAddr: 0x0, symBinAddr: 0x100001470, symSize: 0x10 }
+  - { offset: 0xD011F, size: 0x8, addend: 0x0, symName: '_$s7progros11AppDelegateCMa', symObjAddr: 0xB0, symBinAddr: 0x100001520, symSize: 0x14 }
+  - { offset: 0xD0164, size: 0x8, addend: 0x0, symName: '_$s7progros11AppDelegateC47applicationShouldTerminateAfterLastWindowClosedySbSo13NSApplicationCFTo', symObjAddr: 0x0, symBinAddr: 0x100001470, symSize: 0x10 }
+  - { offset: 0xD0178, size: 0x8, addend: 0x0, symName: '_$s7progros11AppDelegateC40applicationSupportsSecureRestorableStateySbSo13NSApplicationCFTo', symObjAddr: 0x10, symBinAddr: 0x100001480, symSize: 0x10 }
+  - { offset: 0xD01A5, size: 0x8, addend: 0x0, symName: '_$s7progros11AppDelegateCACycfcTo', symObjAddr: 0x20, symBinAddr: 0x100001490, symSize: 0x30 }
+  - { offset: 0xD01E1, size: 0x8, addend: 0x0, symName: '_$s7progros11AppDelegateCfD', symObjAddr: 0x50, symBinAddr: 0x1000014C0, symSize: 0x30 }
+  - { offset: 0xD0245, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x80, symBinAddr: 0x1000014F0, symSize: 0x30 }
+  - { offset: 0xD0355, size: 0x8, addend: 0x0, symName: '_$s7progros19ResourceBundleClass33_47A5296D9B85031F27094C4BB85B36EDLLCfD', symObjAddr: 0x0, symBinAddr: 0x100001540, symSize: 0x20 }
+  - { offset: 0xD0397, size: 0x8, addend: 0x0, symName: '_$s7progros19ResourceBundleClass33_47A5296D9B85031F27094C4BB85B36EDLLCMa', symObjAddr: 0x20, symBinAddr: 0x100001560, symSize: 0x14 }
+  - { offset: 0xD03B3, size: 0x8, addend: 0x0, symName: '_$s7progros19ResourceBundleClass33_47A5296D9B85031F27094C4BB85B36EDLLCfD', symObjAddr: 0x0, symBinAddr: 0x100001540, symSize: 0x20 }
+...

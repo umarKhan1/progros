@@ -9,7 +9,8 @@ import 'package:progros/core/extension/sizedbox_ext.dart';
 import 'package:progros/logic/auth_validation/login_validation/login_validation_cubit.dart';
 import 'package:progros/logic/auth_validation/login_validation/login_validation_state.dart';
 import 'package:progros/presentation/auth/signup/signup.dart';
-import 'package:progros/presentation/widget/already_haveac.dart';
+import 'package:progros/presentation/auth/widget/already_haveac.dart';
+import 'package:progros/presentation/dashboard/dashboard.dart';
 import 'package:progros/widget/app_button.dart';
 import 'package:progros/widget/text_fields.dart';
 
@@ -76,7 +77,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       return Column(
                         children: [
                           CustomTextField(
-                            hint: 'Email Address',
+                            hint: ApplicationStrings.email,
                             iconString: ApplicationImagesStrings.email,
                             controller: emailController,
                             errorText: state.emailError,
@@ -84,7 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           5.hsb,
                           CustomTextField(
-                            hint: 'Password',
+                            hint: ApplicationStrings.password,
                             iconString: ApplicationImagesStrings.password,
                             obscureText: state.obscurePassword,
                             showEye: true,
@@ -139,7 +140,9 @@ class _LoginScreenState extends State<LoginScreen> {
                               loginValidationCubit.submit();
                               final s = loginValidationCubit.state;
                               if (s.emailError == null &&
-                                  s.passwordError == null) {}
+                                  s.passwordError == null) {
+                                context.pushReplacement(const Dashboard());
+                              }
 
                               // Handle login button press
                             },

@@ -1,14 +1,11 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:progros/core/extension/sizedbox_ext.dart';
 
 class ApplicationButton extends StatelessWidget {
-
   const ApplicationButton({
     required this.title,
-    required this.onPressed,  
+    required this.onPressed,
     this.withImage = false,
     this.imagepath = '',
     super.key,
@@ -22,19 +19,20 @@ class ApplicationButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(
-        elevation: 6,
-        minimumSize: Size(double.infinity, 52.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.r),
-        ),
-        padding: EdgeInsets.zero,
-        backgroundColor: Colors.transparent,
-        shadowColor: Colors.black12,
-      ).copyWith(
-        backgroundColor: WidgetStateProperty.all(Colors.transparent),
-        surfaceTintColor: WidgetStateProperty.all(Colors.transparent),
-      ),
+      style:
+          ElevatedButton.styleFrom(
+            elevation: 6,
+            minimumSize: Size(double.infinity, 52.h),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.r),
+            ),
+            padding: EdgeInsets.zero,
+            backgroundColor: Colors.transparent,
+            shadowColor: Colors.black12,
+          ).copyWith(
+            backgroundColor: WidgetStateProperty.all(Colors.transparent),
+            surfaceTintColor: WidgetStateProperty.all(Colors.transparent),
+          ),
       child: Ink(
         decoration: BoxDecoration(
           gradient: const LinearGradient(
@@ -46,20 +44,20 @@ class ApplicationButton extends StatelessWidget {
         ),
         child: Container(
           alignment: Alignment.center,
-          padding: withImage ? EdgeInsets.symmetric(horizontal: 16.w) : EdgeInsets.zero,
+          padding: withImage
+              ? EdgeInsets.symmetric(horizontal: 16.w)
+              : EdgeInsets.zero,
           height: 52.h,
           width: double.infinity,
           child: Row(
-            mainAxisAlignment: withImage ? MainAxisAlignment.start : MainAxisAlignment.center,
+            mainAxisAlignment: withImage
+                ? MainAxisAlignment.start
+                : MainAxisAlignment.center,
             children: [
               if (withImage)
                 Padding(
                   padding: EdgeInsets.only(left: 16.w),
-                  child: Image.asset(
-                    imagepath,
-                    width: 24.w,
-                    height: 24.h,
-                  ),
+                  child: Image.asset(imagepath, width: 24.w, height: 24.h),
                 ),
               if (withImage) 60.wsb,
               Text(

@@ -16,7 +16,12 @@ static const String forgotPassword = 'Forgot Password?';
 static const String donthanAccount = "Don't have an account? ";
 static const String signUp = 'Sign Up';
 static const String  quicklyCreateAccount = 'Quickly create an account';
-
+static const String confirmDeliveryLocation = 'Confirm Delivery Location';
+static const String searchLocation = 'Search Location';
+static const String selectlocation = 'Select Location';
+static const String confrimAddress = 'Confirm Address';
+static const String movetheMap = 'Move the map or search to choose a location.';
+static const String addressSaved = 'Address saved successfully';
 
 ///TextEdidingController start here 
 

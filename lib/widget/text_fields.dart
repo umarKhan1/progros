@@ -7,6 +7,7 @@ class CustomTextField extends StatelessWidget {
     required this.hint,
     required this.iconString,
     required this.controller,
+    required this.keyboardType,
     required this.onChanged,
     super.key,
     this.obscureText = false,
@@ -23,7 +24,8 @@ class CustomTextField extends StatelessWidget {
   final TextEditingController controller;
   final String? errorText;
   final void Function(String) onChanged;
-
+  final TextInputType keyboardType;
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -49,6 +51,7 @@ class CustomTextField extends StatelessWidget {
                 child: TextField(
                   controller: controller,
                   obscureText: obscureText,
+                  keyboardType: keyboardType,
                   onChanged: onChanged,
                   decoration: InputDecoration(
                     hintStyle: TextStyle(

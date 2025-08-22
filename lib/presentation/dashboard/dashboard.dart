@@ -4,7 +4,9 @@ import 'package:progros/core/extension/app_routes_ext.dart';
 import 'package:progros/logic/location/location_cubit.dart';
 import 'package:progros/logic/location/location_state.dart';
 import 'package:progros/presentation/dashboard/widget/header.dart';
+import 'package:progros/presentation/dashboard/widget/search_widget.dart';
 import 'package:progros/presentation/location/location.dart';
+import 'package:progros/presentation/search/search_view.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
@@ -26,7 +28,9 @@ class Dashboard extends StatelessWidget {
                 return AddressHeader(
                   title: 'Home',
                   address:
-                      liveAddress ?? saved ?? '31, Main Street, Lisboa, Protugal',
+                      liveAddress ??
+                      saved ??
+                      '31, Main Street, Lisboa, Protugal',
                   onTap: () {
                     context.push(const ConfirmLocationPage());
                   },
@@ -35,6 +39,13 @@ class Dashboard extends StatelessWidget {
                   },
                 );
               },
+            ),
+             SearchEntryRow(
+              onOpenSearch: () {
+                context.push(const SearchScreen());
+              },
+              onFilterTap: (){}, // Add filter functionality if needed  
+
             ),
           ],
         ),

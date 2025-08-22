@@ -81,11 +81,13 @@ class _LoginScreenState extends State<LoginScreen> {
                             iconString: ApplicationImagesStrings.email,
                             controller: emailController,
                             errorText: state.emailError,
+                            keyboardType: TextInputType.emailAddress,
                             onChanged: loginValidationCubit.emailChanged,
                           ),
                           5.hsb,
                           CustomTextField(
                             hint: ApplicationStrings.password,
+                            keyboardType: TextInputType.visiblePassword,
                             iconString: ApplicationImagesStrings.password,
                             obscureText: state.obscurePassword,
                             showEye: true,

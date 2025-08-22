@@ -76,7 +76,7 @@ class BottomAddressSheet extends StatelessWidget {
                       ),
                     )
                   : Text(
-                      'Confirm Address',
+                      ApplicationStrings.confrimAddress,
                       style: TextStyle(fontSize: 18.sp, color: Colors.white),
                     ),
             ),

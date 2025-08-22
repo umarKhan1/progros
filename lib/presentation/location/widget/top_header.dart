@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:progros/core/constant/app_stringconst.dart';
 
 class TopLocationAppBar extends StatelessWidget {
   const TopLocationAppBar({super.key});
@@ -16,7 +17,7 @@ class TopLocationAppBar extends StatelessWidget {
           ),
           Expanded(
             child: Text(
-              'Confirm Delivery Location',
+              ApplicationStrings.confirmDeliveryLocation,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.w700),
             ),

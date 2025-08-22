@@ -83,12 +83,14 @@ class _SignupScreenState extends State<SignupScreen> {
                             iconString: ApplicationImagesStrings.email,
                             controller: emailController,
                             errorText: state.emailError,
+                            keyboardType: TextInputType.emailAddress,
                             onChanged: signupValidationCubit.emailChanged,
                           ),
                           5.hsb,
                           CustomTextField(
                             hint: ApplicationStrings.phone,
                             iconString: ApplicationImagesStrings.phone,
+                            keyboardType: TextInputType.phone,
                             controller: phoneController,
                             errorText: state.phoneError,
                             onChanged: signupValidationCubit.phoneNumberChanged,
@@ -98,6 +100,7 @@ class _SignupScreenState extends State<SignupScreen> {
                             hint: ApplicationStrings.password,
                             iconString: ApplicationImagesStrings.password,
                             obscureText: state.obscurePassword,
+                            keyboardType: TextInputType.visiblePassword,
                             showEye: true,
                             onEyeTap:
                                 signupValidationCubit.togglePasswordVisibility,
@@ -114,9 +117,8 @@ class _SignupScreenState extends State<SignupScreen> {
                               if (s.emailError == null &&
                                   s.passwordError == null &&
                                   s.phoneError == null) {
-                                      context.pushReplacement(const Dashboard());
-                             
-                                  }
+                                context.pushReplacement(const Dashboard());
+                              }
 
                               // Handle login button press
                             },

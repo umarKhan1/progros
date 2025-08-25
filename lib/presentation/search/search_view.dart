@@ -146,7 +146,10 @@ class _SearchScreenState extends State<SearchScreen> {
                       separatorBuilder: (_, __) => SizedBox(width: 12.w),
                       itemBuilder: (ctx, i) => SizedBox(
                         width: 180.w,
-                        child: ProductCard(product: productsState.trending[i]),
+                        child: ProductCard(
+                          product: productsState.trending[i],
+                          isFromCat: false,
+                        ),
                       ),
                     ),
                   ),
@@ -164,7 +167,10 @@ class _SearchScreenState extends State<SearchScreen> {
                       separatorBuilder: (_, __) => SizedBox(width: 12.w),
                       itemBuilder: (ctx, i) => SizedBox(
                         width: 180.w,
-                        child: ProductCard(product: productsState.bestDeals[i]),
+                        child: ProductCard(
+                          product: productsState.bestDeals[i],
+                          isFromCat: false,
+                        ),
                       ),
                     ),
                   ),
@@ -201,8 +207,10 @@ class _SearchScreenState extends State<SearchScreen> {
                           crossAxisSpacing: 12,
                           childAspectRatio: .63,
                         ),
-                        itemBuilder: (ctx, i) =>
-                            ProductCard(product: s.results[i]),
+                        itemBuilder: (ctx, i) => ProductCard(
+                          product: s.results[i],
+                          isFromCat: false,
+                        ),
                       );
                     },
                   ),

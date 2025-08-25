@@ -2,23 +2,128 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:progros/logic/product/product_state.dart';
 import 'package:progros/models/product_model.dart';
 
-
 class ProductsCubit extends Cubit<ProductsState> {
   ProductsCubit() : super(const ProductsState());
 
   void init() {
     const products = [
-      Product(id: '1',  title: 'Aashirvaad Shudh Aata',  image: 'https://images.bombaybasket.co.uk/cdn-cgi/image/format=auto/public/uploads/all/2023/05/202305051159571069751.jpeg', size: '10 kg', price: 12, compareAt: 14, isTrending: true,  isBestDeal: true),
-      Product(id: '2',  title: 'Aashirwad Select Aata',  image: 'https://jalpurmillersonline.com/cdn/shop/products/aashirvaad-aashirvaad-whole-wheat-flour-sudh-chakki-atta-2kg-jalpur-millers-online_1000x.jpg?v=1665657205', size: '10 kg', price: 12, compareAt: 14, isTrending: true),
-      Product(id: '3',  title: 'Fortune Fresh Atta',     image: 'https://jalpurmillersonline.com/cdn/shop/products/aashirvaad-aashirvaad-whole-wheat-flour-sudh-chakki-atta-2kg-jalpur-millers-online_1000x.jpg?v=1665657205', size: '5 kg',  price: 5,  compareAt: 8,  isBestDeal: true),
-      Product(id: '4',  title: 'Mother Chakki Atta',     image: 'https://m.media-amazon.com/images/I/61EIj1hg6uL._UF1000,1000_QL80_.jpg', size: '10 kg', price: 8,  compareAt: 10),
-      Product(id: '5',  title: 'Dhruvam Wheat Atta',     image: 'https://5.imimg.com/data5/SELLER/Default/2020/9/WG/FP/VK/99075044/atta-1000x1000.jpg', size: '5 kg',  price: 7,  compareAt: 10),
-      Product(id: '6',  title: 'Fresh Ultimate Atta',    image: 'https://m.media-amazon.com/images/I/71b1A7MJYlL._UF1000,1000_QL80_.jpg', size: '5 kg',  price: 7,  compareAt: 10, isTrending: true),
-      Product(id: '7',  title: 'Kisan Ghee',              image: 'https://greenvalley.pk/cdn/shop/files/kisan-desi-ghee-tin-16kg_5f3c1249-6632-454b-bab5-1f2483595b12.webp?v=1739455421',  size: '1 L',   price: 9.5),
-      Product(id: '8',  title: 'Dettol Liquid',          image: 'http://images.apollo247.in/pub/media/catalog/product/d/e/det0004_1_1.jpg?tr=q-80,f-webp,w-400,dpr-3,c-at_max%201200w',size: '500 ml',price: 6.9),
-      Product(id: '9',  title: 'Surf Excel Detergent',   image: 'https://bazaar5.com/image/cache/catalog/pro/product/apiData/b00u2due1a-surf-excel-quick-wash-detergent-powder-1-kg-washing-powder-with-lemon-bleach-to-remove-tough-stains-on-clothes-bucket-machine-wash-1-count-0-1000x1000.jpg',  size: '500 ml',price: 12, compareAt: 14),
-      Product(id: '10', title: 'Fortune Arhar Dal',      image: 'https://nilagroceries.se/media/catalog/product/cache/4fd20ec0a0f667fe02ced0f72da734ae/f/o/fortune_toor_dal.png',   size: '1 kg',  price: 10, compareAt: 12, isBestDeal: true),
+      // Atta, Rice & Dal
+      Product(
+        id: 'atta1',
+        title: 'Aashirvaad Shudh Aata',
+        image:
+            'https://images.bombaybasket.co.uk/cdn-cgi/image/format=auto/public/uploads/all/2023/05/202305051159571069751.jpeg',
+        size: '10 kg',
+        price: 12,
+        compareAt: 14,
+        isTrending: true,
+        isBestDeal: true,
+        categoryId: 'atta_rice_dal',
+        subCategoryId: 'atta',
+      ),
+      Product(
+        id: 'dal1',
+        title: 'Fortune Arhar Dal',
+        image:
+            'https://nilagroceries.se/media/catalog/product/cache/4fd20ec0a0f667fe02ced0f72da734ae/f/o/fortune_toor_dal.png',
+        size: '1 kg',
+        price: 10,
+        compareAt: 12,
+        isBestDeal: true,
+        categoryId: 'atta_rice_dal',
+        subCategoryId: 'dal',
+      ),
+      Product(
+        id: 'rice1',
+        title: 'India Gate Basmati Rice',
+        image:
+            'https://www.bigbasket.com/media/uploads/p/l/40075597_2-india-gate-basmati-rice-mogra.jpg',
+        size: '5 kg',
+        price: 15,
+        categoryId: 'atta_rice_dal',
+        subCategoryId: 'rice',
+      ),
+      // Vegetables & Fruits
+      Product(
+        id: 'veg1',
+        title: 'Fresh Tomatoes',
+        image:
+            'https://images.pexels.com/photos/53588/tomatoes-vegetables-food-frisch-53588.jpeg',
+        size: '1 kg',
+        price: 2.5,
+        categoryId: 'veg_fruits',
+        subCategoryId: 'fresh_vegetables',
+      ),
+      Product(
+        id: 'fruit1',
+        title: 'Fresh Apples',
+        image:
+            'https://previews.123rf.com/images/btk1977/btk19771206/btk1977120600004/13900514-fresh-strawberries-isolated-on-white-background.jpg',
+        size: '1 kg',
+        price: 3.5,
+        categoryId: 'veg_fruits',
+        subCategoryId: 'fresh_fruits',
+      ),
+      // Dairy & Breakfast
+      Product(
+        id: 'dairy1',
+        title: 'Amul Butter',
+        image:
+            'https://www.jiomart.com/images/product/original/490000074/amuls-butter-500-g-carton-product-images-o490000074-p490000074-0-202203170234.jpg',
+        size: '500 g',
+        price: 4.5,
+        categoryId: 'dairy_breakfast',
+        subCategoryId: '',
+      ),
+      // Cold Drinks & Juices
+      Product(
+        id: 'drink1',
+        title: 'Coca Cola',
+        image:
+            'https://www.coca-cola.com/content/dam/onexp/gb/en/brands/coca-cola/coca-cola-original-taste-330ml-can.png',
+        size: '330 ml',
+        price: 1.2,
+        categoryId: 'cold_drinks',
+        subCategoryId: '',
+      ),
+      // Instant & Frozen Food
+      Product(
+        id: 'frozen1',
+        title: 'Frozen Peas',
+        image:
+            'https://www.bigbasket.com/media/uploads/p/l/40075597_2-india-gate-basmati-rice-mogra.jpg',
+        size: '500 g',
+        price: 2.0,
+        categoryId: 'instant_frozen',
+        subCategoryId: '',
+      ),
+      // Masala, Oil & Dry Fruits
+      Product(
+        id: 'oil1',
+        title: 'Kisan Ghee',
+        image:
+            'https://greenvalley.pk/cdn/shop/files/kisan-desi-ghee-tin-16kg_5f3c1249-6632-454b-bab5-1f2483595b12.webp?v=1739455421',
+        size: '1 L',
+        price: 9.5,
+        categoryId: 'masala_oil_dryfruits',
+        subCategoryId: 'oil_ghee',
+      ),
+      // Chicken, Meat & Fish
+      Product(
+        id: 'meat1',
+        title: 'Fresh Chicken',
+        image:
+            'https://5.imimg.com/data5/WI/ZZ/OL/ANDROID-81993397/product-jpeg-500x500.jpg',
+        size: '1 kg',
+        price: 7.5,
+        categoryId: 'meat_fish',
+        subCategoryId: '',
+      ),
     ];
     emit(state.copyWith(all: products));
   }
+  List<Product> byCategory(String categoryId) =>
+      state.all.where((p) => p.categoryId == categoryId).toList();
+  List<Product> bySubCategory(String subCategoryId) =>
+      state.all.where((p) => p.subCategoryId == subCategoryId).toList();
 }

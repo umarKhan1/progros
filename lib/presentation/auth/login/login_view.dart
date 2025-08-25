@@ -10,6 +10,7 @@ import 'package:progros/logic/auth_validation/login_validation/login_validation_
 import 'package:progros/logic/auth_validation/login_validation/login_validation_state.dart';
 import 'package:progros/presentation/auth/signup/signup.dart';
 import 'package:progros/presentation/auth/widget/already_haveac.dart';
+import 'package:progros/presentation/bottomnavigation/bottom_navigation.dart';
 import 'package:progros/presentation/dashboard/dashboard.dart';
 import 'package:progros/widget/app_button.dart';
 import 'package:progros/widget/text_fields.dart';
@@ -143,7 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               final s = loginValidationCubit.state;
                               if (s.emailError == null &&
                                   s.passwordError == null) {
-                                context.pushReplacement(const Dashboard());
+                                context.pushReplacement(const BottomNavigationScreen());
                               }
 
                               // Handle login button press

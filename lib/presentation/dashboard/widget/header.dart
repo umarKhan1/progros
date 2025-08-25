@@ -64,9 +64,8 @@ class AddressHeader extends StatelessWidget {
                     ),
                     const SizedBox(height: 2),
                     Text(
-                      address.substring(0,40),
+                      address.length > 40 ? address.substring(0, 40) : address,
                       maxLines: 1,
-
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         fontSize: 16,

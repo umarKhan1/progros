@@ -93,7 +93,7 @@ class ProductsCubit extends Cubit<ProductsState> {
         image:
             'https://www.bigbasket.com/media/uploads/p/l/40075597_2-india-gate-basmati-rice-mogra.jpg',
         size: '500 g',
-        price: 2.0,
+        price: 2,
         categoryId: 'instant_frozen',
         subCategoryId: '',
       ),

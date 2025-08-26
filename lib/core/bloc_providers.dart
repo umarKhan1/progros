@@ -11,6 +11,7 @@ import 'package:progros/logic/onboarding.dart/on_boarding_cubit.dart';
 import 'package:progros/logic/product/product_cubit.dart';
 import 'package:progros/logic/search/search_cubit.dart';
 import 'package:progros/logic/splash_screen_cubit.dart';
+import 'package:progros/logic/wishlist/wishlist_cubit.dart';
 import 'package:progros/models/cat_subcat_model.dart';
 
 class AppBlocProviders extends StatelessWidget {
@@ -26,6 +27,7 @@ class AppBlocProviders extends StatelessWidget {
         BlocProvider(create: (context) => LoginValidationCubit()),
         BlocProvider(create: (_) => ProductsCubit()..init()),
         BlocProvider(create: (context) => BasketCubit()),
+        BlocProvider(create: (context) => WishlistCubit()),
         BlocProvider(create: (context) => BottomNavigationCubit()),
         BlocProvider(
           create: (context) => CategoryCubit(

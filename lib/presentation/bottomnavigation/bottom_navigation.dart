@@ -5,6 +5,7 @@ import 'package:progros/logic/bottom_nav/bottom_state.dart';
 import 'package:progros/presentation/bottomnavigation/widget/bottom_navigation_widget.dart';
 import 'package:progros/presentation/dashboard/dashboard.dart';
 import 'package:progros/presentation/demopage.dart';
+import 'package:progros/presentation/wishlist/wishlist_screen.dart';
 
 class BottomNavigationScreen extends StatelessWidget {
   const BottomNavigationScreen({super.key});
@@ -15,7 +16,7 @@ class BottomNavigationScreen extends StatelessWidget {
       builder: (context, state) {
         final pages = [
           Dashboard(key: state.pageKeys[0]),
-          const DemoPage(),
+          const WishlistScreen(),
           const DemoPage(),
           const DemoPage(), // Replace with actual pages
   

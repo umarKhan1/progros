@@ -11,7 +11,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class LocationCubit extends Cubit<LocationState> {
   LocationCubit({this.placesApiKey})
-      : super(LocationState(cameraTarget: const LatLng(20.5937, 78.9629)));
+    : super(LocationState(cameraTarget: const LatLng(20.5937, 78.9629)));
 
   final String? placesApiKey; // plug your key to use real APIs
   GoogleMapController? _map;
@@ -30,10 +30,12 @@ class LocationCubit extends Cubit<LocationState> {
     // Service enabled?
     final enabled = await Geolocator.isLocationServiceEnabled();
     if (!enabled) {
-      emit(state.copyWith(
-        permission: PermissionStatusX.serviceDisabled,
-        checkingPermission: false,
-      ));
+      emit(
+        state.copyWith(
+          permission: PermissionStatusX.serviceDisabled,
+          checkingPermission: false,
+        ),
+      );
       return;
     }
 
@@ -43,22 +45,28 @@ class LocationCubit extends Cubit<LocationState> {
     }
 
     if (p == LocationPermission.whileInUse || p == LocationPermission.always) {
-      emit(state.copyWith(
-        permission: PermissionStatusX.granted,
-        checkingPermission: false,
-      ));
+      emit(
+        state.copyWith(
+          permission: PermissionStatusX.granted,
+          checkingPermission: false,
+        ),
+      );
       // Preload for dashboard
       await fetchCurrentLocationAndAddress();
     } else if (p == LocationPermission.deniedForever) {
-      emit(state.copyWith(
-        permission: PermissionStatusX.deniedForever,
-        checkingPermission: false,
-      ));
+      emit(
+        state.copyWith(
+          permission: PermissionStatusX.deniedForever,
+          checkingPermission: false,
+        ),
+      );
     } else {
-      emit(state.copyWith(
-        permission: PermissionStatusX.denied,
-        checkingPermission: false,
-      ));
+      emit(
+        state.copyWith(
+          permission: PermissionStatusX.denied,
+          checkingPermission: false,
+        ),
+      );
     }
   }
 
@@ -71,11 +79,8 @@ class LocationCubit extends Cubit<LocationState> {
   Future<void> attachMap(GoogleMapController c) async {
     _map = c;
 
-    // If we already have a location, jump there immediately to avoid "India" flash
     if (state.myLocation != null) {
-      await _map!.moveCamera(
-        CameraUpdate.newLatLngZoom(state.myLocation!, 16),
-      );
+      await _map!.moveCamera(CameraUpdate.newLatLngZoom(state.myLocation!, 16));
     } else {
       // First time opening map: try to center on me right away
       // ignore: unawaited_futures
@@ -93,8 +98,9 @@ class LocationCubit extends Cubit<LocationState> {
     if (p == LocationPermission.denied) {
       p = await Geolocator.requestPermission();
     }
-    if (p == LocationPermission.denied || p == LocationPermission.deniedForever) {
-      throw PermissionDeniedException('Location permission denied',);
+    if (p == LocationPermission.denied ||
+        p == LocationPermission.deniedForever) {
+      throw const PermissionDeniedException('Location permission denied');
     }
 
     try {
@@ -120,17 +126,19 @@ class LocationCubit extends Cubit<LocationState> {
       final me = LatLng(pos.latitude, pos.longitude);
       final addr = await _reverseGeocode(me.latitude, me.longitude);
 
-      emit(state.copyWith(
-        myLocation: me,
-        cameraTarget: me,
-        currentAddress: addr,
-        locatingMe: false,
-      ));
+      emit(
+        state.copyWith(
+          myLocation: me,
+          cameraTarget: me,
+          currentAddress: addr,
+          locatingMe: false,
+        ),
+      );
 
       if (_map != null) {
         await _map!.animateCamera(
           CameraUpdate.newCameraPosition(
-            CameraPosition(target: me, zoom: 16, tilt: 0, bearing: 0),
+            CameraPosition(target: me, zoom: 16,),
           ),
         );
       }
@@ -208,10 +216,12 @@ class LocationCubit extends Cubit<LocationState> {
     final json = jsonDecode(res.body);
     final preds = (json['predictions'] ?? []) as List;
     return preds
-        .map((e) => PlacePrediction(
-              placeId: e['place_id'].toString(),
-              description: e['description'].toString(),
-            ))
+        .map(
+          (e) => PlacePrediction(
+            placeId: e['place_id'].toString(),
+            description: e['description'].toString(),
+          ),
+        )
         .cast<PlacePrediction>()
         .toList();
   }

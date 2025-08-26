@@ -66,7 +66,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                               OnboardingPageModel.onboardingPages[state.page];
                           return Column(
                             mainAxisSize: MainAxisSize.min,
-                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SizedBox(height: 32.h),
                               Text(

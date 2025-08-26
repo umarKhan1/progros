@@ -28,7 +28,12 @@ class CategoryCard extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(child: CategoryImage(imageUrl: category.image, borderRadius: 16.r)),
+            Expanded(
+              child: CategoryImage(
+                imageUrl: category.image,
+                borderRadius: 16.r,
+              ),
+            ),
             // Removed SizedBox and used extension if available
             Text(
               category.name,

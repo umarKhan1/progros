@@ -58,9 +58,9 @@ class HomeShopSection extends StatelessWidget {
 }
 
 class AllCategoriesPage extends StatelessWidget {
-  final List<Category> categories;
 
-  const AllCategoriesPage({super.key, required this.categories});
+  const AllCategoriesPage({required this.categories, super.key});
+  final List<Category> categories;
 
   @override
   Widget build(BuildContext context) {

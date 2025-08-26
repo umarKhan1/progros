@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:progros/logic/basket/basket_cubit.dart';
+import 'package:progros/logic/basket/basket_state.dart';
 
 class BottomNavBarWidget extends StatelessWidget {
   const BottomNavBarWidget({
@@ -48,11 +51,45 @@ class BottomNavBarWidget extends StatelessWidget {
                       selectedIcon: Icons.favorite,
                       onTap: () => onTap(1),
                     ),
-                    _NavItem(
-                      selected: currentIndex == 2,
-                      icon: Icons.shopping_bag_outlined,
-                      selectedIcon: Icons.shopping_bag,
-                      onTap: () => onTap(2),
+                    BlocBuilder<BasketCubit, BasketState>(
+                      builder: (context, state) {
+                        final count = state.items.fold<int>(
+                            0, (int sum, e) => sum + e.quantity);
+                        return Stack(
+                          clipBehavior: Clip.none,
+                          children: [
+                            _NavItem(
+                              selected: currentIndex == 2,
+                              icon: Icons.shopping_bag_outlined,
+                              selectedIcon: Icons.shopping_bag,
+                              onTap: () => onTap(2),
+                            ),
+                            if (count > 0)
+                              Positioned(
+                                right: 10,
+                                top: 6,
+                                child: Container(
+                                  padding: const EdgeInsets.all(3),
+                                  decoration: const BoxDecoration(
+                                    color: Colors.red,
+                                    shape: BoxShape.circle,
+                                  ),
+                                  constraints: const BoxConstraints(
+                                      minWidth: 18, minHeight: 18),
+                                  child: Text(
+                                    '$count',
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 11,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
+                                ),
+                              ),
+                          ],
+                        );
+                      },
                     ),
                     _NavItem(
                       selected: currentIndex == 3,

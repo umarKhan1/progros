@@ -16,7 +16,7 @@ class AppBanner extends StatelessWidget {
     final bannerHeight = (height * 0.23).clamp(140.0, 260.0);
     final imageWidth = (width * 0.45).clamp(120.0, 260.0);
     final imageHeight = (bannerHeight * 0.85).clamp(90.0, 220.0);
-   
+
     return Center(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16.r),
@@ -33,12 +33,14 @@ class AppBanner extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12.r),
                   child: CachedNetworkImage(
-                    imageUrl: 'https://www.sharpshopper.net/Images/2016-Product-Slideshow.gif',
+                    imageUrl:
+                        'https://www.sharpshopper.net/Images/2016-Product-Slideshow.gif',
                     height: imageHeight,
                     width: imageWidth,
                     fit: BoxFit.fill,
                     placeholder: (context, url) => const BannerShimmer(),
-                    errorWidget: (context, url, error) => const Icon(Icons.broken_image),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.broken_image),
                   ),
                 ),
               ),
@@ -66,7 +68,9 @@ class AppBanner extends StatelessWidget {
                           borderRadius: BorderRadius.circular(12.r),
                         ),
                         padding: EdgeInsets.symmetric(
-                            horizontal: 20.w, vertical: 12.h),
+                          horizontal: 20.w,
+                          vertical: 12.h,
+                        ),
                       ),
                       child: Text(
                         ApplicationStrings.shopNow,

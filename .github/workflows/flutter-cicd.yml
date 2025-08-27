@@ -21,6 +21,11 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
+      - name: Create .env file
+        run: |
+          echo "YOUR_ENV_KEY=your_value" > .env
+          # Add more environment variables as needed
+
       - name: Build APK
         run: flutter build apk --release
 

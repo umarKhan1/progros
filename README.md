@@ -1,16 +1,46 @@
-# progros
+# Progros - Flutter Shopping App
 
-A new Flutter project.
+A modern, responsive Flutter shopping app featuring:
+
+- Checkout with basket, discounts, and totals
+- Location selection with map and reverse geocoding
+- Recommended products with sticky scroll and animations
+- Cached images with shimmer loaders
+- Custom navigation and spacing extensions
+
+## Screenshots
+
+Below is a preview from the app:
+
+![App Screenshot](assets/screenshot/screenshot.jpeg)
+
+## Key Features
+
+- Responsive, modular UI using ScreenUtil
+- Basket management with stepper, removal, and Dismissible
+- Recommended products with persistent scroll controller
+- Checkout summary: item total, discount, delivery, grand total
+- Address from LocationCubit and SharedPreferences
+- CachedNetworkImage + shimmer placeholders
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+1. Ensure Flutter is installed
+2. Create a `.env` file at the project root:
+   
+   GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY
+   
+3. Run the app:
+   
+   flutter pub get
+   flutter run
 
-A few resources to get you started if this is your first Flutter project:
+## Project Structure
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- `lib/` main app code
+- `assets/` fonts, images, and screenshot(s)
+- Platform code for iOS, Android, web, macOS, linux, windows
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## License
+
+This project is for demonstration purposes.

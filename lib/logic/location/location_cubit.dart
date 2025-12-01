@@ -125,16 +125,16 @@ class LocationCubit extends Cubit<LocationState> {
       final pos = await _safeGetPosition();
       final me = LatLng(pos.latitude, pos.longitude);
       final addr = await _reverseGeocode(me.latitude, me.longitude);
-
+      // If no address found, fallback to default
+      final displayAddr = (addr.isNotEmpty) ? addr : '31, Main Street, Lisboa, Protugal';
       emit(
         state.copyWith(
           myLocation: me,
           cameraTarget: me,
-          currentAddress: addr,
+          currentAddress: displayAddr,
           locatingMe: false,
         ),
       );
-
       if (_map != null) {
         await _map!.animateCamera(
           CameraUpdate.newCameraPosition(
@@ -156,7 +156,8 @@ class LocationCubit extends Cubit<LocationState> {
     final t = state.cameraTarget;
     emit(state.copyWith(loadingAddress: true));
     final addr = await _reverseGeocode(t.latitude, t.longitude);
-    emit(state.copyWith(currentAddress: addr, loadingAddress: false));
+    final displayAddr = addr.isNotEmpty ? addr : '31, Main Street, Lisboa, Protugal';
+    emit(state.copyWith(currentAddress: displayAddr, loadingAddress: false));
   }
 
   // ---------- Search / predictions ----------
@@ -189,6 +190,7 @@ class LocationCubit extends Cubit<LocationState> {
     emit(state.copyWith(saving: true));
     final t = state.cameraTarget;
     await _prefs?.setString('saved_address', state.currentAddress);
+    print('Address saved: ${state.currentAddress}');
     await _prefs?.setDouble('saved_lat', t.latitude);
     await _prefs?.setDouble('saved_lng', t.longitude);
     emit(state.copyWith(saving: false));
@@ -249,19 +251,20 @@ class LocationCubit extends Cubit<LocationState> {
 
   Future<String> _reverseGeocode(double lat, double lng) async {
     if (placesApiKey == null) {
-      return 'Lat: ${lat.toStringAsFixed(5)}, Lng: ${lng.toStringAsFixed(5)}';
+      // Always return empty string if no API key, so UI falls back to default/fallback address
+      return '';
     }
 
     final url =
         'https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lng&key=$placesApiKey';
     final res = await http.get(Uri.parse(url));
-    if (res.statusCode != 200) return '($lat, $lng)';
+    if (res.statusCode != 200) return '';
 
     final json = jsonDecode(res.body);
     final results = (json['results'] as List?) ?? [];
     return results.isNotEmpty
         ? results.first['formatted_address'].toString()
-        : '($lat, $lng)';
+        : '';
   }
 
   @override

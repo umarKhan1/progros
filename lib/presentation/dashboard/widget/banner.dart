@@ -1,8 +1,8 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:progros/core/constant/app_stringconst.dart';
 import 'package:progros/presentation/dashboard/widget/banner_shimmer.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class AppBanner extends StatelessWidget {
   const AppBanner({super.key, this.onTap});
@@ -44,7 +44,6 @@ class AppBanner extends StatelessWidget {
                   ),
                 ),
               ),
-              // Left text and button
               Padding(
                 padding: EdgeInsets.all(20.w),
                 child: Column(

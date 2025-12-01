@@ -217,9 +217,11 @@ class _ConfirmLocationPageState extends State<ConfirmLocationPage> {
                                   key: const ValueKey('sheet'),
                                   height: bottomSheetTarget,
                                   saving: state.saving,
-                                  address: state.currentAddress.isEmpty
-                                      ? ApplicationStrings.movetheMap
-                                      : state.currentAddress,
+                                  address: state.currentPlaceName.isNotEmpty
+                                      ? state.currentPlaceName
+                                      : (state.currentAddress.isEmpty
+                                          ? ApplicationStrings.movetheMap
+                                          : state.currentAddress),
                                   onConfirm: () async {
                                     await context
                                         .read<LocationCubit>()

@@ -20,6 +20,7 @@ class LocationState {
     this.currentAddress = '',
     this.predictions = const [],
     this.searchQuery = '',
+    this.currentPlaceName = '',
   });
   // gate
   final PermissionStatusX permission;
@@ -34,6 +35,7 @@ class LocationState {
   final String currentAddress;
   final List<PlacePrediction> predictions;
   final String searchQuery;
+  final String currentPlaceName;
 
   LocationState copyWith({
     PermissionStatusX? permission,
@@ -46,6 +48,7 @@ class LocationState {
     String? currentAddress,
     List<PlacePrediction>? predictions,
     String? searchQuery,
+    String? currentPlaceName,
   }) {
     return LocationState(
       permission: permission ?? this.permission,
@@ -58,6 +61,7 @@ class LocationState {
       currentAddress: currentAddress ?? this.currentAddress,
       predictions: predictions ?? this.predictions,
       searchQuery: searchQuery ?? this.searchQuery,
+      currentPlaceName: currentPlaceName ?? this.currentPlaceName,
     );
   }
 }

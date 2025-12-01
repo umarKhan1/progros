@@ -15,6 +15,7 @@ static const String password = '${assets}lock.png';
 static const String phone = '${assets}tele.png';
 static const String location = '${assets}location.png';
 static const String cart = '${assets}bag.png';
+static const String promo = '${assets}promo.png';
 
 
 }

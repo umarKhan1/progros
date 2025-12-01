@@ -10,6 +10,7 @@ import 'package:progros/logic/product/product_cubit.dart';
 import 'package:progros/logic/product/product_state.dart';
 
 import 'package:progros/presentation/category/category_view.dart';
+import 'package:progros/presentation/checkout/checkout_screen.dart';
 import 'package:progros/presentation/dashboard/widget/banner.dart';
 import 'package:progros/presentation/dashboard/widget/header.dart';
 import 'package:progros/presentation/dashboard/widget/search_widget.dart';
@@ -23,29 +24,28 @@ class Dashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit = context.read<LocationCubit>();
     return Scaffold(
       body: SafeArea(
         child: Column(
           children: [
             BlocBuilder<LocationCubit, LocationState>(
               builder: (context, state) {
-                final saved = cubit.getSavedAddress();
-                final liveAddress = state.currentAddress.isNotEmpty
-                    ? state.currentAddress
-                    : null;
+                final liveAddress = state.currentPlaceName.isNotEmpty
+                    ? state.currentPlaceName
+                    : (state.currentAddress.isNotEmpty &&
+                            !state.currentAddress.contains('Lat:') &&
+                            !state.currentAddress.contains('Lng:')
+                        ? state.currentAddress
+                        : '31, Main Street, Lisboa, Protugal');
 
                 return AddressHeader(
                   title: 'Home',
-                  address:
-                      liveAddress ??
-                      saved ??
-                      '31, Main Street, Lisboa, Protugal',
+                  address: liveAddress,
                   onTap: () {
                     context.push(const ConfirmLocationPage());
                   },
                   onBagTap: () {
-                    // Handle bag tap
+                  context.push(const CheckoutScreen());
                   },
                 );
               },
